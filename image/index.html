@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <title>image-cdn</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain; /* 保持比例，避免拉伸 */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        // 图片文件名数组 (假设图片位于 "images" 文件夹)
+        const imageNames = [
+            "image1.jpg",
+            "image10.jpg",
+            "image11.jpg",
+            "image12.jpg",
+            "image13.jpg",
+            "image14.jpg",
+            "image15.jpg",
+            "image16.jpg",
+            "image2.jpg",
+            "image3.jpg",
+            "image4.jpg",
+            "image5.jpg",
+            "image6.jpg",
+            "image7.jpg",
+            "image8.jpg"
+        ];
+
+        // 获取随机图片的路径
+        const randomIndex = Math.floor(Math.random() * imageNames.length);
+        const imageUrl = `images/${imageNames[randomIndex]}`;
+
+        // 创建图片元素并添加到body
+        const imgElement = document.createElement('img');
+        imgElement.src = imageUrl;
+        document.body.appendChild(imgElement);
+    </script>
+</body>
+</html>
